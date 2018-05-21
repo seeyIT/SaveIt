@@ -26,7 +26,7 @@ class ExpanseAdapter (private val myDataset: ArrayList<Expanse>) :
 
         holder.expanse.expanse_thing.text = myDataset[position].thing
         holder.expanse.expanse_price.text = myDataset[position].price
-        holder.expanse.expanse_date.text = myDataset[position].date.toString() // TODO add extension method to format long to date
+        holder.expanse.expanse_date.text = myDataset[position].date.toDate() // TODO add extension method to format long to date
     }
 
     override fun getItemCount() = myDataset.size

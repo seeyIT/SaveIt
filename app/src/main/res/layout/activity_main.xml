@@ -46,7 +46,10 @@
             <EditText
                 android:id="@+id/expanse_thing_input"
                 android:layout_width="192dp"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1"
+                android:nextFocusDown="@id/expanse_cost_input" />
         </LinearLayout>
 
         <LinearLayout
@@ -63,7 +66,8 @@
             <EditText
                 android:id="@+id/expanse_cost_input"
                 android:layout_width="192dp"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
         </LinearLayout>
 
         <Button

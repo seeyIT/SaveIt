@@ -1,6 +1,7 @@
 package pl.kornelius.saveit
 
 import android.Manifest
+import android.content.Context
 import android.content.pm.PackageManager
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -12,6 +13,10 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
 import java.nio.charset.Charset
+import android.view.inputmethod.InputMethodManager.SHOW_IMPLICIT
+import android.content.Context.INPUT_METHOD_SERVICE
+import android.view.inputmethod.InputMethodManager
+
 
 class MainActivity : AppCompatActivity() {
     val myDataset: ArrayList<Expanse> = ArrayList()
@@ -46,6 +51,9 @@ class MainActivity : AppCompatActivity() {
 
     fun addExpanse(view: View) {
         expanse_entry_layout.visibility = View.VISIBLE
+        expanse_thing_input.requestFocus()
+        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.showSoftInput(expanse_thing_input, InputMethodManager.SHOW_IMPLICIT)
 
     }
 
